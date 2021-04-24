@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var model = OxygenVM()
     var body: some View {
         Text("Hello, world!")
             .padding()
+        
+            .onAppear(perform: {
+                model.getOxygenRelatedInfo()
+            })
     }
 }
 

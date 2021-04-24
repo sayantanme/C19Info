@@ -11,6 +11,9 @@
 		3962B44426343083004AA9D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3962B44326343083004AA9D8 /* ContentView.swift */; };
 		3962B44626343084004AA9D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3962B44526343084004AA9D8 /* Assets.xcassets */; };
 		3962B44926343084004AA9D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3962B44826343084004AA9D8 /* Preview Assets.xcassets */; };
+		3962B45A26344008004AA9D8 /* OxygenDataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3962B45926344008004AA9D8 /* OxygenDataVM.swift */; };
+		3962B45F2634456C004AA9D8 /* OxygenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3962B45E2634456C004AA9D8 /* OxygenData.swift */; };
+		3962B46426344FD7004AA9D8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3962B46326344FD7004AA9D8 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		3962B44526343084004AA9D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3962B44826343084004AA9D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3962B44A26343084004AA9D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3962B45926344008004AA9D8 /* OxygenDataVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxygenDataVM.swift; sourceTree = "<group>"; };
+		3962B45E2634456C004AA9D8 /* OxygenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxygenData.swift; sourceTree = "<group>"; };
+		3962B46326344FD7004AA9D8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,10 @@
 		3962B44026343083004AA9D8 /* C19Info */ = {
 			isa = PBXGroup;
 			children = (
+				3962B46226344FC9004AA9D8 /* Network */,
+				3962B45D26344555004AA9D8 /* Model */,
+				3962B4552634316D004AA9D8 /* ViewModel */,
+				3962B45426343162004AA9D8 /* Views */,
 				3962B44126343083004AA9D8 /* C19InfoApp.swift */,
 				3962B44326343083004AA9D8 /* ContentView.swift */,
 				3962B44526343084004AA9D8 /* Assets.xcassets */,
@@ -67,6 +77,37 @@
 				3962B44826343084004AA9D8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3962B45426343162004AA9D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3962B4552634316D004AA9D8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3962B45926344008004AA9D8 /* OxygenDataVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3962B45D26344555004AA9D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3962B45E2634456C004AA9D8 /* OxygenData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3962B46226344FC9004AA9D8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3962B46326344FD7004AA9D8 /* NetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +180,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3962B44426343083004AA9D8 /* ContentView.swift in Sources */,
+				3962B45A26344008004AA9D8 /* OxygenDataVM.swift in Sources */,
+				3962B46426344FD7004AA9D8 /* NetworkManager.swift in Sources */,
 				3962B44226343083004AA9D8 /* C19InfoApp.swift in Sources */,
+				3962B45F2634456C004AA9D8 /* OxygenData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
