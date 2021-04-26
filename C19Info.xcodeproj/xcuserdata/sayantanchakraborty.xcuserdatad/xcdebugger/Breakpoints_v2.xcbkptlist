@@ -7,32 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3E33A8A0-82C0-4F87-A2D7-B72771F9D37C"
+            uuid = "7F35D5FF-606A-447A-9ED2-47FB889712DC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "C19Info/Network/NetworkManager.swift"
+            filePath = "C19Info/ViewModel/OxygenDataVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "fetchO2Data(completionHandler:)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "getOxygenRelatedInfo()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7F35D5FF-606A-447A-9ED2-47FB889712DC - 81398669c79c8c6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Result&lt;C19Info.OxygenData, Swift.Error&gt;) -&gt; () in C19Info.OxygenVM.getOxygenRelatedInfo() -&gt; ()"
+                  moduleName = "C19Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sayantanchakraborty/Documents/Developer/own/C19Info/C19Info/ViewModel/OxygenDataVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "7F35D5FF-606A-447A-9ED2-47FB889712DC - 12799dc39ba01b40"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (C19Info.O2Data, C19Info.O2Data) -&gt; Swift.Bool in closure #1 () -&gt; () in closure #1 (Swift.Result&lt;C19Info.OxygenData, Swift.Error&gt;) -&gt; () in C19Info.OxygenVM.getOxygenRelatedInfo() -&gt; ()"
+                  moduleName = "C19Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sayantanchakraborty/Documents/Developer/own/C19Info/C19Info/ViewModel/OxygenDataVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "203">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "853A7908-8E20-4D94-BAED-357F07FE8E22"
+            uuid = "CE72273D-2EC6-4232-9585-4F1C36E91D79"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "C19Info/Network/NetworkManager.swift"
+            filePath = "C19Info/Model/OxygenData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "fetchO2Data(completionHandler:)"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "convertToDate()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

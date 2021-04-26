@@ -24,7 +24,7 @@ struct Constants: URLProvider {
     }
 }
 class OxygenVM: ObservableObject {
-    @Published private(set) var oxygenModel: [OxygenData]?
+    @Published private(set) var oxygenModel: [O2Data] = []
     private(set) var networkCore: NetworkManagerProtocol?
     
     init() {
@@ -37,7 +37,10 @@ class OxygenVM: ObservableObject {
         networkCore?.fetchO2Data(completionHandler: { (result) in
             switch result {
             case .success(let data):
-                print(data)
+                DispatchQueue.main.async {
+                    //self.oxygenModel = data.data.sorted(by: { ($0.lastVerifiedOn ?? Date.distantPast).compare($1.lastVerifiedOn ?? Date.distantPast) == .orderedDescending})
+                    self.oxygenModel = data.data
+                }
                 
             case .failure(let error):
                 print(error.localizedDescription)

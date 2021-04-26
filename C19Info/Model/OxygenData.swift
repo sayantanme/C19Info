@@ -13,20 +13,21 @@ struct OxygenData: Decodable {
 }
 
 // MARK: - Datum
-struct O2Data: Decodable {
+struct O2Data: Decodable , Identifiable {
     let availability: String?
     let city: String?
     let comment, companyName: String?
-    let createdTime: String
+    let createdTime: Date?
     let datumDescription: String?
     let district: String?
     let emailID: String?
     let homeDeliveryAvailable: String?
-    let id: String
-    let instructions, lastVerifiedOn: String?
+    var id: String
+    let instructions:String?
+    let lastVerifiedOn: Date?
     let name: String?
-    let phone1: Double?
-    let phone2: Int?
+    let phone1: String?
+    let phone2: String?
     let sourceLink: String?
     let sourceName: String?
     let state: String?
@@ -45,18 +46,48 @@ struct O2Data: Decodable {
         do {city = try container.decode(String?.self, forKey: .city)} catch {city = nil}
         do {comment = try container.decode(String?.self, forKey: .comment)} catch {comment = nil}
         do {companyName = try container.decode(String?.self, forKey: .companyName)} catch {companyName = nil}
-        createdTime = try container.decode(String.self, forKey: .createdTime)
+        
+        let interimCreatedDate = try container.decode(String.self, forKey: .createdTime)
+        if let iDate = interimCreatedDate.convertToDate() {
+            createdTime = iDate
+        } else {
+            createdTime = nil
+        }
+        
         do {datumDescription = try container.decode(String?.self, forKey: .datumDescription)} catch {datumDescription = nil}
         do {district = try container.decode(String?.self, forKey: .district)} catch {district = nil}
         do {emailID = try container.decode(String?.self, forKey: .emailID)} catch {emailID = nil}
         do {homeDeliveryAvailable = try container.decode(String?.self, forKey: .homeDeliveryAvailable)} catch {homeDeliveryAvailable = nil}
         id = try container.decode(String.self, forKey: .id)
         do {instructions = try container.decode(String?.self, forKey: .instructions)} catch {instructions = nil}
-        do {lastVerifiedOn = try container.decode(String?.self, forKey: .lastVerifiedOn)} catch {lastVerifiedOn = nil}
+        
+        do {
+            if let interimVerifiedDate = try container.decode(String?.self, forKey: .lastVerifiedOn), let processedDate = interimVerifiedDate.convertToDate() {
+                lastVerifiedOn = processedDate
+            } else {
+                lastVerifiedOn = nil
+            }
+            
+        } catch {lastVerifiedOn = nil}
+        
         do {name = try container.decode(String?.self, forKey: .name)} catch {name = nil}
         
-        do {phone1 = try container.decode(Double?.self, forKey: .phone1)} catch { phone1 = nil}
-        do {phone2 = try container.decode(Int?.self, forKey: .phone2)} catch { phone2 = nil }
+        do {
+            if let interimValue = try container.decode(Double?.self, forKey: .phone1) {
+                phone1 = "\(interimValue)"
+            } else {
+                phone1 = nil
+            }
+            
+        } catch { phone1 = nil}
+        do {
+            if let interimValue = try container.decode(Int?.self, forKey: .phone2) {
+                phone2 = "\(interimValue)"
+            } else {
+                phone2 = nil
+            }
+            
+        } catch { phone2 = nil }
         do {sourceLink = try container.decode(String?.self, forKey: .sourceLink)} catch { sourceLink = nil }
         do {sourceName = try container.decode(String?.self, forKey: .sourceName)} catch {sourceName = nil }
         do {state = try container.decode(String?.self, forKey: .state)} catch { state = nil}
@@ -87,3 +118,28 @@ enum State {
 //    case cylinder
 //    case refil
 //}
+
+extension Optional where Wrapped == String {
+    var text: String {
+        self ?? ""
+    }
+}
+
+extension String {
+    func convertToDate() -> Date? {
+        let dateFormatter =  ISO8601DateFormatter()
+        dateFormatter.formatOptions = [.withFullDate,
+                                                  .withTime,
+                                                  .withDashSeparatorInDate,
+                                                  .withColonSeparatorInTime]
+        return dateFormatter.date(from:self)
+    }
+}
+
+extension Date {
+    func convertToString() -> String? {
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "dd MMM yy HH:mm"
+        return dateformatter.string(from: self)
+    }
+}
